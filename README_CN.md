@@ -12,8 +12,8 @@ ENS160是一种经过验证和免维护的技术, 专为高容量和可靠性而
 ![产品实物图](./resources/images/ENS160.png)
 
 
-## 产品链接 (https://www.dfrobot.com.cn/)
-    SKU：SEN0514/SEN0515
+## 产品链接 (https://www.dfrobot.com.cn/search.php?keywords=ens160)
+    SKU: SEN0514/SEN0515
 
 ## 目录
 
@@ -139,6 +139,7 @@ Micro:bit          |      √       |              |             |
 ## 历史
 
 - 2021/10/27 - 1.0.0 版本
+- 2022/04/20 - 1.0.1 版本
 
 
 ## 创作者

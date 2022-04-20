@@ -17,8 +17,8 @@ technology, designed for high volume and reliability.
 ![产品实物图](../../resources/images/ENS160.png)
 
 
-## Product Link (https://www.dfrobot.com/)
-    SKU：SEN0514/SEN0515
+## Product Link (https://www.dfrobot.com/search-ens160.html)
+    SKU: SEN0514/SEN0515
 
 
 ## Table of Contents
@@ -143,6 +143,7 @@ To use the library, first download the library file, paste it into the directory
 ## History
 
 - 2021/10/28 - Version 1.0.0 released.
+- 2022/04/20 - Version 1.0.1 released.
 
 
 ## Credits

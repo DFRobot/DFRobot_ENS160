@@ -7,7 +7,6 @@
  * @author [qsjhyy](yihuan.huang@dfrobot.com)
  * @version  V1.0
  * @date  2021-10-26
- * @get from https://www.dfrobot.com
  * @url https://github.com/DFRobot/DFRobot_ENS160
  */
 #include "DFRobot_ENS160.h"
@@ -130,7 +129,7 @@ int DFRobot_ENS160_I2C::begin(void)
 
 void DFRobot_ENS160_I2C::writeReg(uint8_t reg, const void* pBuf, size_t size)
 {
-  if(pBuf == NULL){
+  if(pBuf == NULL) {
     DBG("pBuf ERROR!! : null pointer");
   }
   uint8_t * _pBuf = (uint8_t *)pBuf;
@@ -138,7 +137,7 @@ void DFRobot_ENS160_I2C::writeReg(uint8_t reg, const void* pBuf, size_t size)
   _pWire->beginTransmission(_deviceAddr);
   _pWire->write(reg);
 
-  for(size_t i = 0; i < size; i++){
+  for(size_t i = 0; i < size; i++) {
     _pWire->write(_pBuf[i]);
   }
   _pWire->endTransmission();
@@ -147,22 +146,19 @@ void DFRobot_ENS160_I2C::writeReg(uint8_t reg, const void* pBuf, size_t size)
 size_t DFRobot_ENS160_I2C::readReg(uint8_t reg, void* pBuf, size_t size)
 {
   size_t count = 0;
-  if(NULL == pBuf)
-  {
+  if(NULL == pBuf) {
     DBG("pBuf ERROR!! : null pointer");
   }
   uint8_t * _pBuf = (uint8_t*)pBuf;
 
   _pWire->beginTransmission(_deviceAddr);
   _pWire -> write(reg);
-  if(0 != _pWire->endTransmission())   // Used Wire.endTransmission() to end a slave transmission started by beginTransmission() and arranged by write().
-  {
+  if(0 != _pWire->endTransmission()) {   // Used Wire.endTransmission() to end a slave transmission started by beginTransmission() and arranged by write().
     DBG("endTransmission ERROR!!");
-  }else{
+  } else {
     _pWire->requestFrom(_deviceAddr, (uint8_t)size);   // Master device requests size bytes from slave device, which can be accepted by master device with read() or available()
     
-    while (_pWire->available())
-    {
+    while (_pWire->available()) {
       _pBuf[count++] = _pWire->read();   // Use read() to receive and put into buf
     }
     // _pWire->endTransmission();
@@ -186,8 +182,7 @@ int DFRobot_ENS160_SPI::begin(void)
 
 void DFRobot_ENS160_SPI::writeReg(uint8_t reg, const void* pBuf, size_t size)
 {
-  if(NULL == pBuf)
-  {
+  if(NULL == pBuf) {
     DBG("pBuf ERROR!! : null pointer");
   }
   uint8_t * _pBuf = (uint8_t *)pBuf;
@@ -195,8 +190,7 @@ void DFRobot_ENS160_SPI::writeReg(uint8_t reg, const void* pBuf, size_t size)
   _pSpi->beginTransaction(SPISettings(2000000, MSBFIRST, SPI_MODE0));
   digitalWrite(_csPin, LOW);
   _pSpi->transfer((reg << 1) & 0xFE);
-  while(size--)
-  {
+  while(size--) {
     _pSpi->transfer(*_pBuf);
     _pBuf++;
   }
@@ -206,8 +200,7 @@ void DFRobot_ENS160_SPI::writeReg(uint8_t reg, const void* pBuf, size_t size)
 
 size_t DFRobot_ENS160_SPI::readReg(uint8_t reg, void* pBuf, size_t size)
 {
-  if(NULL == pBuf)
-  {
+  if(NULL == pBuf) {
     DBG("pBuf ERROR!! : null pointer");
   }
   uint8_t * _pBuf = (uint8_t *)pBuf;
@@ -217,8 +210,7 @@ size_t DFRobot_ENS160_SPI::readReg(uint8_t reg, void* pBuf, size_t size)
   digitalWrite(_csPin, LOW);
   _pSpi->transfer((reg << 1) | 0x01);
   // _pSpi->transfer(0x00);
-  while(size--)
-  {
+  while(size--) {
     *_pBuf = _pSpi->transfer(0x00);
     _pBuf++;
     count++;

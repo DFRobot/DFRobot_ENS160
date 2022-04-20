@@ -15,10 +15,11 @@ communicate with a main host processor. The ENS160 is a proven and maintenance-f
 technology, designed for high volume and reliability.
 
 ![产品实物图](./resources/images/ENS160.png)
+![产品实物图](./resources/images/ENS160_Gravity.png)
 
 
-## Product Link (https://www.dfrobot.com/)
-    SKU：SEN0514/SEN0515
+## Product Link (https://www.dfrobot.com/search-ens160.html)
+    SKU: SEN0514/SEN0515
 
 
 ## Table of Contents
@@ -146,6 +147,7 @@ Micro:bit          |      √       |              |             |
 ## History
 
 - 2021/10/27 - Version 1.0.0 released.
+- 2022/04/20 - Version 1.0.1 released.
 
 
 ## Credits

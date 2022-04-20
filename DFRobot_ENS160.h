@@ -305,7 +305,7 @@ public:
    * @param i2cAddr The I2C address is 0x52 when SDO pin is connected to GND and 0x53 when connected to VCC.
    * @return None
    */
-  DFRobot_ENS160_I2C(TwoWire *pWire, uint8_t i2cAddr=0x52);
+  DFRobot_ENS160_I2C(TwoWire *pWire=&Wire, uint8_t i2cAddr=0x52);
 
   /**
    * @fn begin
@@ -356,7 +356,7 @@ public:
   DFRobot_ENS160_SPI(SPIClass *pSpi, uint8_t csPin);
 
   /**
-   * @fn DFRobot_ENS160_SPI
+   * @fn begin
    * @brief Subclass init function
    * @return int type, indicates returning init status
    * @retval 0 NO_ERROR
