@@ -227,7 +227,7 @@ class DFRobot_ENS160(object):
         '''!
           @brief Users write ambient temperature and relative humidity into ENS160 for calibration and compensation of the measured gas data.
           @param ambient_temp Compensate the current ambient temperature, float type, unit: C
-          @param relative_humidity Compensate the current ambient temperature, float type, unit: %rH
+          @param relative_humidity Compensate the current ambient humidity, float type, unit: %rH
         '''
         temp = int((ambient_temp + 273.15) * 64 + 0.5)
         rh = int(relative_humidity * 512 + 0.5)
