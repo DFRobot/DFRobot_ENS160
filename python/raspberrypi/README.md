@@ -80,7 +80,7 @@ To use the library, first download the library file, paste it into the directory
     '''!
       @brief Users write ambient temperature and relative humidity into ENS160 for calibration and compensation of the measured gas data.
       @param ambient_temp Compensate the current ambient temperature, float type, unit: C
-      @param relative_humidity Compensate the current ambient temperature, float type, unit: %rH
+      @param relative_humidity Compensate the current ambient humidity, float type, unit: %rH
     '''
     def set_temp_and_hum(self, ambient_temp, relative_humidity):
 
