@@ -46,7 +46,7 @@ def setup():
   '''
     # Users write ambient temperature and relative humidity into ENS160 for calibration and compensation of the measured gas data.
     # ambient_temp Compensate the current ambient temperature, float type, unit: C
-    # relative_humidity Compensate the current ambient temperature, float type, unit: %rH
+    # relative_humidity Compensate the current ambient humidity, float type, unit: %rH
   '''
   sensor.set_temp_and_hum(ambient_temp=25.00, relative_humidity=50.00)
 
