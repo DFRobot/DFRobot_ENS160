@@ -51,7 +51,7 @@ void setup(void)
   /**
    * Users write ambient temperature and relative humidity into ENS160 for calibration and compensation of the measured gas data.
    * ambientTemp Compensate the current ambient temperature, float type, unit: C
-   * relativeHumidity Compensate the current ambient temperature, float type, unit: %rH
+   * relativeHumidity Compensate the current ambient humidity, float type, unit: %rH
    */
   ENS160.setTempAndHum(/*temperature=*/25.0, /*humidity=*/50.0);
 
