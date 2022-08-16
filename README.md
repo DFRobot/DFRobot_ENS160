@@ -89,7 +89,7 @@ then open the examples folder and run the demo in the folder.
    * @fn setTempAndHum
    * @brief Users write ambient temperature and relative humidity into ENS160 for calibration compensation of the measured gas data.
    * @param ambientTemp Compensate the current ambient temperature, float type, unit: C
-   * @param relativeHumidity Compensate the current ambient temperature, float type, unit: %rH
+   * @param relativeHumidity Compensate the current ambient humidity, float type, unit: %rH
    * @return None
    */
   void setTempAndHum(float ambientTemp, float relativeHumidity);
